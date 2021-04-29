@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MahasiswaController; 
+use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\CariMahasiswaController;
 use Illuminate\Http\Request;
 
 
@@ -21,3 +22,6 @@ use Illuminate\Http\Request;
 });*/
 
 Route::resource('mahasiswas', MahasiswaController::class);
+
+Route::get('mahasiswa/nilai/{mahasiswa}', [MahasiswaController::class, 'nilai'])->name('mahasiswas.showNilai');
+
